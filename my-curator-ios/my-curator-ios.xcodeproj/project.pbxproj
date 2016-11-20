@@ -12,6 +12,7 @@
 		D78D08D01DE0F3A2007F1699 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D78D08CE1DE0F3A2007F1699 /* Main.storyboard */; };
 		D78D08D21DE0F3A2007F1699 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D78D08D11DE0F3A2007F1699 /* Assets.xcassets */; };
 		D78D08D51DE0F3A2007F1699 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D78D08D31DE0F3A2007F1699 /* LaunchScreen.storyboard */; };
+		D78D08DD1DE0F832007F1699 /* BeaconAdmin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78D08DC1DE0F832007F1699 /* BeaconAdmin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		D78D08D11DE0F3A2007F1699 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D78D08D41DE0F3A2007F1699 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D78D08D61DE0F3A2007F1699 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D78D08DC1DE0F832007F1699 /* BeaconAdmin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconAdmin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				D78D08CA1DE0F3A2007F1699 /* AppDelegate.swift */,
 				D78D08CC1DE0F3A2007F1699 /* ViewController.swift */,
+				D78D08DC1DE0F832007F1699 /* BeaconAdmin.swift */,
 				D78D08CE1DE0F3A2007F1699 /* Main.storyboard */,
 				D78D08D11DE0F3A2007F1699 /* Assets.xcassets */,
 				D78D08D31DE0F3A2007F1699 /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			files = (
 				D78D08CD1DE0F3A2007F1699 /* ViewController.swift in Sources */,
 				D78D08CB1DE0F3A2007F1699 /* AppDelegate.swift in Sources */,
+				D78D08DD1DE0F832007F1699 /* BeaconAdmin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +306,7 @@
 				D78D08DB1DE0F3A2007F1699 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
