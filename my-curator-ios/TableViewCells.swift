@@ -7,3 +7,11 @@
 //
 
 import Foundation
+import UIKit
+
+class ImageDescriptionCell: UITableViewCell {
+    
+    
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var descriptionImage: UIImageView!
+}

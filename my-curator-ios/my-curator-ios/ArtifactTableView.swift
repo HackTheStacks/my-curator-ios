@@ -21,5 +21,27 @@ class ArtifactTableViewController: UITableViewController {
         
     }
     
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
     
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0 || indexPath.row == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "descriptionCell", for: indexPath) as! ImageDescriptionCell
+            cell.descriptionLabel.text = "Just making sure this is working"
+            cell.descriptionImage.image = UIImage(named: "book1")
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "bookCell", for: indexPath) 
+            return cell
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 || indexPath.row == 1 {
+            return 168
+        } else {
+            return 54
+        }
+    }
 }

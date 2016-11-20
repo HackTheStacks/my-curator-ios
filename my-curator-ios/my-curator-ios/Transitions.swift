@@ -13,7 +13,7 @@ import CoreLocation
 class Transitions: UIViewController {
     
     var beacon: CLBeacon!
-    var delegate: UIViewController!
+    var delegate: ViewController!
     
     @IBOutlet weak var mainImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -35,6 +35,7 @@ class Transitions: UIViewController {
             let dest = vc.viewControllers[0] as! ArtifactTableViewController
             dest.delegate = self.delegate
             dest.beacon = self.beacon
+            self.delegate.shouldDismiss = false
         }
     }
 }

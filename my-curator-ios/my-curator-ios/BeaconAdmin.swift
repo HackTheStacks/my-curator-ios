@@ -108,47 +108,11 @@ class BeaconManager: NSObject, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
         manager.startRangingBeacons(in: region as! CLBeaconRegion)
         manager.startUpdatingLocation()
-        
-        let content = UNMutableNotificationContent()
-        content.title = "Entered the beacon region"
-        content.subtitle = "Subtitle"
-        content.body = "You have entered into the region of this beacon!!"
-        content.categoryIdentifier = "message"
-        content.sound = UNNotificationSound.default()
-        let trigger = UNTimeIntervalNotificationTrigger(
-            timeInterval: 1.0,
-            repeats: false)
-        let request = UNNotificationRequest(
-            identifier: "museum.message",
-            content: content,
-            trigger: trigger
-        )
-        UNUserNotificationCenter.current().add(
-            request, withCompletionHandler: nil)
-        
     }
     
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
         manager.stopRangingBeacons(in: region as! CLBeaconRegion)
-        manager.stopUpdatingLocation()
-        
-        let content = UNMutableNotificationContent()
-        content.title = "Exited the beacon region"
-        content.subtitle = "Subtitle"
-        content.body = "You have exited the region of this beacon!!"
-        content.categoryIdentifier = "message"
-        content.sound = UNNotificationSound.default()
-        let trigger = UNTimeIntervalNotificationTrigger(
-            timeInterval: 1.0,
-            repeats: false)
-        let request = UNNotificationRequest(
-            identifier: "museum.exit_message",
-            content: content,
-            trigger: trigger
-        )
-        UNUserNotificationCenter.current().add(
-            request, withCompletionHandler: nil)
-        
+        manager.stopUpdatingLocation()        
     }
     
     func sendCloseLocalNotification() {
