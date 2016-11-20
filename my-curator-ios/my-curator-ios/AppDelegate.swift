@@ -7,15 +7,22 @@
 //
 
 import UIKit
+import CoreLocation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    var beaconManager: BeaconManager!
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        if launchOptions?[UIApplicationLaunchOptionsKey.location] != nil {
+            beaconManager = BeaconManager()
+        }
+        
         return true
     }
 

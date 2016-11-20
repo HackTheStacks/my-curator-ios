@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import UserNotifications
 
 class ViewController: UIViewController {
     
@@ -29,8 +30,16 @@ class ViewController: UIViewController {
     var lemonBeaconMovingAvg: Int!
     var lemonMovingArray = [Int]()
     
+    var isGrantedNotificationAccess: Bool!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        UNUserNotificationCenter.current().requestAuthorization(
+            options: [.alert,.sound,.badge],
+            completionHandler: { (granted,error) in
+                self.isGrantedNotificationAccess = granted
+        })
         
         // Can Update For Precision
         movingAverageThreshold = 5      //# of readings to average over
