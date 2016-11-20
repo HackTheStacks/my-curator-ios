@@ -13,25 +13,34 @@ class ViewController: UIViewController {
     
     let beaconManager = BeaconManager.sharedInstance
     var beacons: [CLBeacon]!
-    var movingAverageThreshold: Int?
+
+    var movingAverageThreshold: Int!
 
     @IBOutlet weak var signalLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var rssiDebugLabel: UILabel!
     
+    var beetTriggerValue: Int!
+    var beetBeaconMovingAvg: Int!
+    var beetMovingArray = [Int]()
     
-    var beetBeaconMovingAvg: Int = 0
-    
+    var lemonTriggerValue: Int!
+    var lemonBeaconMovingAvg: Int!
+    var lemonMovingArray = [Int]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //how many previous values to average
-        beaconManager.movingAverageThreshold = 3
+        
+        // Can Update For Precision
+        movingAverageThreshold = 5      //# of readings to average over
+        beetTriggerValue = -70
+        lemonTriggerValue = -75
+        
         
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.beaconsUpdated), name: Notification.Name("beaconsManagerDidUpdateNotification"), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.authorizationDenied), name: Notification.Name("beaconsManagerAuthorizationDenied"), object: nil)
-        
         
         let transform = CGAffineTransform(scaleX: 5.0, y: 5.0)
         activityIndicator.transform = transform
@@ -43,11 +52,66 @@ class ViewController: UIViewController {
         
         for beacon in beacons {
             if beacon.minor == 49339 {
+                //BEET
                 if beacon.rssi != 0 {
-                    signalLabel.text = "Signal: \(beacon.rssi)"
+                    beetMovingArray.append(beacon.rssi)
+                }
+                if beetMovingArray.count >= movingAverageThreshold {
+                    while beetMovingArray.count > movingAverageThreshold {
+                        beetMovingArray.remove(at: 0)
+                    }
+                    let avg = Int(Double(beetMovingArray.reduce(0) { $0 + $1 }) / Double(beetMovingArray.count))
+                    beetBeaconMovingAvg = avg
+                }
+                
+                guard let beetAvg = beetBeaconMovingAvg else {
+                    return
+                }
+                
+                rssiDebugLabel.text = "beet rssi: \(beetAvg) dB\nlemon rssi: \(lemonBeaconMovingAvg) dB"
+                
+                if beetAvg >= beetTriggerValue {
+                    activityIndicator.stopAnimating()
+                    activityIndicator.isHidden = true
+                    self.view.backgroundColor = UIColor.purple
+                    statusLabel.text = "FOUND THE BEET!"
+                }
+                
+            } else if beacon.minor == 18544 {
+                //LEMON
+                if beacon.rssi != 0 {
+                    lemonMovingArray.append(beacon.rssi)
+                }
+                if lemonMovingArray.count >= movingAverageThreshold {
+                    while lemonMovingArray.count > movingAverageThreshold {
+                        lemonMovingArray.remove(at: 0)
+                    }
+                    let avg = Int(Double(lemonMovingArray.reduce(0) { $0 + $1 }) / Double(lemonMovingArray.count))
+                    lemonBeaconMovingAvg = avg
+                }
+                
+                guard let lemonAvg = lemonBeaconMovingAvg else {
+                    return
+                }
+
+                rssiDebugLabel.text = "beet rssi: \(beetBeaconMovingAvg) dB\nlemon rssi: \(lemonAvg) dB"
+                
+                if lemonAvg >= lemonTriggerValue {
+                    activityIndicator.stopAnimating()
+                    activityIndicator.isHidden = true
+                    self.view.backgroundColor = UIColor.yellow
+                    statusLabel.text = "FOUND THE LEMON!"
                 }
             }
-            
+            //GODO this needs work
+            if let lemonAvg = lemonBeaconMovingAvg, let beetAvg = beetBeaconMovingAvg {
+                if lemonAvg < lemonTriggerValue && beetAvg < beetTriggerValue {
+                    activityIndicator.startAnimating()
+                    activityIndicator.isHidden = false
+                    self.view.backgroundColor = UIColor.white
+                    statusLabel.text = "No Items in Range..."
+                }
+            }
         }
     }
 
