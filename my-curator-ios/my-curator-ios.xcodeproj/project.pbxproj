@@ -7,15 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D728237A1DE1CD0300D6F4E2 /* Transitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72823791DE1CD0300D6F4E2 /* Transitions.swift */; };
 		D78D08CB1DE0F3A2007F1699 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78D08CA1DE0F3A2007F1699 /* AppDelegate.swift */; };
 		D78D08CD1DE0F3A2007F1699 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78D08CC1DE0F3A2007F1699 /* ViewController.swift */; };
 		D78D08D01DE0F3A2007F1699 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D78D08CE1DE0F3A2007F1699 /* Main.storyboard */; };
 		D78D08D21DE0F3A2007F1699 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D78D08D11DE0F3A2007F1699 /* Assets.xcassets */; };
 		D78D08D51DE0F3A2007F1699 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D78D08D31DE0F3A2007F1699 /* LaunchScreen.storyboard */; };
 		D78D08DD1DE0F832007F1699 /* BeaconAdmin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78D08DC1DE0F832007F1699 /* BeaconAdmin.swift */; };
+		D7DDA9D11DE1DD4500F81652 /* ArtifactTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DDA9D01DE1DD4500F81652 /* ArtifactTableView.swift */; };
+		D7DDA9D31DE1E9F300F81652 /* TableViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DDA9D21DE1E9F300F81652 /* TableViewCells.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D72823791DE1CD0300D6F4E2 /* Transitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transitions.swift; sourceTree = "<group>"; };
 		D78D08C71DE0F3A2007F1699 /* my-curator-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "my-curator-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D78D08CA1DE0F3A2007F1699 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D78D08CC1DE0F3A2007F1699 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +28,8 @@
 		D78D08D41DE0F3A2007F1699 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D78D08D61DE0F3A2007F1699 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D78D08DC1DE0F832007F1699 /* BeaconAdmin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconAdmin.swift; sourceTree = "<group>"; };
+		D7DDA9D01DE1DD4500F81652 /* ArtifactTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtifactTableView.swift; sourceTree = "<group>"; };
+		D7DDA9D21DE1E9F300F81652 /* TableViewCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewCells.swift; path = ../TableViewCells.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,9 @@
 				D78D08CA1DE0F3A2007F1699 /* AppDelegate.swift */,
 				D78D08CC1DE0F3A2007F1699 /* ViewController.swift */,
 				D78D08DC1DE0F832007F1699 /* BeaconAdmin.swift */,
+				D72823791DE1CD0300D6F4E2 /* Transitions.swift */,
+				D7DDA9D01DE1DD4500F81652 /* ArtifactTableView.swift */,
+				D7DDA9D21DE1E9F300F81652 /* TableViewCells.swift */,
 				D78D08CE1DE0F3A2007F1699 /* Main.storyboard */,
 				D78D08D11DE0F3A2007F1699 /* Assets.xcassets */,
 				D78D08D31DE0F3A2007F1699 /* LaunchScreen.storyboard */,
@@ -146,7 +155,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D78D08CD1DE0F3A2007F1699 /* ViewController.swift in Sources */,
+				D7DDA9D31DE1E9F300F81652 /* TableViewCells.swift in Sources */,
 				D78D08CB1DE0F3A2007F1699 /* AppDelegate.swift in Sources */,
+				D728237A1DE1CD0300D6F4E2 /* Transitions.swift in Sources */,
+				D7DDA9D11DE1DD4500F81652 /* ArtifactTableView.swift in Sources */,
 				D78D08DD1DE0F832007F1699 /* BeaconAdmin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

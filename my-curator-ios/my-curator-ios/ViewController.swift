@@ -80,10 +80,12 @@ class ViewController: UIViewController {
                 rssiDebugLabel.text = "beet rssi: \(beetAvg) dB\nlemon rssi: \(lemonBeaconMovingAvg) dB"
                 
                 if beetAvg >= beetTriggerValue {
-                    activityIndicator.stopAnimating()
-                    activityIndicator.isHidden = true
-                    self.view.backgroundColor = UIColor.purple
-                    statusLabel.text = "FOUND THE BEET!"
+                    if presentedViewController == nil {
+                        let transitionVC = storyboard?.instantiateViewController(withIdentifier: "transitionID") as! Transitions
+                        transitionVC.beacon = beacon
+                        transitionVC.delegate = self
+                        self.present(transitionVC, animated: true, completion: nil)
+                    }
                 }
                 
             } else if beacon.minor == 18544 {
@@ -106,15 +108,20 @@ class ViewController: UIViewController {
                 rssiDebugLabel.text = "beet rssi: \(beetBeaconMovingAvg) dB\nlemon rssi: \(lemonAvg) dB"
                 
                 if lemonAvg >= lemonTriggerValue {
-                    activityIndicator.stopAnimating()
-                    activityIndicator.isHidden = true
-                    self.view.backgroundColor = UIColor.yellow
-                    statusLabel.text = "FOUND THE LEMON!"
+                    if presentedViewController == nil {
+                        let transitionVC = storyboard?.instantiateViewController(withIdentifier: "transitionID") as! Transitions
+                        transitionVC.beacon = beacon
+                        transitionVC.delegate = self
+                        self.present(transitionVC, animated: true, completion: nil)
+                    }
                 }
             }
-            //GODO this needs work
+
             if let lemonAvg = lemonBeaconMovingAvg, let beetAvg = beetBeaconMovingAvg {
                 if lemonAvg < lemonTriggerValue && beetAvg < beetTriggerValue {
+                    if presentedViewController != nil {
+                        self.dismiss(animated: true, completion: nil)
+                    }
                     activityIndicator.startAnimating()
                     activityIndicator.isHidden = false
                     self.view.backgroundColor = UIColor.white
