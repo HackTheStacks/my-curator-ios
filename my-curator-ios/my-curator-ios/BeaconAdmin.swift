@@ -116,10 +116,19 @@ class BeaconManager: NSObject, CLLocationManagerDelegate {
     }
     
     func sendCloseLocalNotification() {
+        
+        let fileURL = Bundle.main.url(forResource: "flag", withExtension: "jpeg")
+        let attachment = try? UNNotificationAttachment.init(identifier: "", url: fileURL!, options: [:])
+        
         let content = UNMutableNotificationContent()
-        content.title = "You're close!"
-        content.subtitle = "Subtitle"
-        content.body = "YOU ARE REALLY CLOSE TO THIS BEACON NOW! OPEN THE APP!"
+        
+        if let attachment = attachment {
+            content.attachments = [attachment]
+        }
+        
+        content.title = "Expeditions to the Gobi"
+        content.subtitle = "by the Museum with the Mongolian Academy of Sciences"
+        content.body = "This flag, which hangs on the Museum’s 4th floor, is a veteran of the Museum’s 1920s Central Asiatic Expeditions to the Gobi Desert, where important finds included numerous fossils of ancient reptiles, and the first discovery of dinosaur eggs. Expedition leader Roy Chapman Andrews introduced motor vehicles for the long hauls across the desert, and the flag was placed on the lead truck. Its tattered condition resulted from a fierce sandstorm."
         content.categoryIdentifier = "message"
         content.sound = UNNotificationSound.default()
         let trigger = UNTimeIntervalNotificationTrigger(

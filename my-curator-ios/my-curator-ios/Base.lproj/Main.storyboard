@@ -224,7 +224,7 @@ lemon rssi: - - -</string>
                                 <rect key="frame" x="0.0" y="196" width="375" height="54"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FiE-0p-hik" id="S42-S8-kNh">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="53"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="53.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Read This Book" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFu-Hb-xQT">
@@ -257,7 +257,11 @@ lemon rssi: - - -</string>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="7Q2-1K-map">
-                        <barButtonItem key="rightBarButtonItem" title="Leave This Item" id="wGD-3C-amE"/>
+                        <barButtonItem key="rightBarButtonItem" title="Leave This Item" id="wGD-3C-amE">
+                            <connections>
+                                <action selector="leaveTapped:" destination="Ee2-Iy-FhT" id="9Br-fr-uVH"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uji-Kj-uQw" userLabel="First Responder" sceneMemberID="firstResponder"/>

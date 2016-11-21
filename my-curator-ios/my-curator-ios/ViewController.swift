@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     var beacons: [CLBeacon]!
     
     var shouldDismiss: Bool = true
+    
+//    var JSONArray: [String : Any]!
 
     var movingAverageThreshold: Int!
 
@@ -62,7 +64,7 @@ class ViewController: UIViewController {
                 //BEET
                 if beacon.rssi != 0 {
                     beetMovingArray.append(beacon.rssi)
-                    print("beet_rssi: \(beacon.rssi)")
+//                    print("beet_rssi: \(beacon.rssi)")
                 }
                 if beetMovingArray.count >= movingAverageThreshold {
                     while beetMovingArray.count > movingAverageThreshold {
@@ -89,7 +91,7 @@ class ViewController: UIViewController {
                 //LEMON
                 if beacon.rssi != 0 {
                     lemonMovingArray.append(beacon.rssi)
-                    print("lemon_rssi: \(beacon.rssi)")
+//                    print("lemon_rssi: \(beacon.rssi)")
                 }
                 if lemonMovingArray.count >= movingAverageThreshold {
                     while lemonMovingArray.count > movingAverageThreshold {
@@ -120,11 +122,6 @@ class ViewController: UIViewController {
                         self.dismiss(animated: true, completion: nil)
                         shouldDismiss = false
                     }
-                    
-                    
-//                    if presentedViewController != nil && presentedViewController is UINavigationController == false {
-//                        self.dismiss(animated: true, completion: nil)
-//                    }
                     statusLabel.text = "No Items in Range..."
                 }
             }

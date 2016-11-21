@@ -21,8 +21,10 @@ class Transitions: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        mainImage.image = UIImage(named: "book1")
+
+        mainImage.image = UIImage.init(named: "flag2")
+//        mainImage.image = UIImage(data: try! Data.init(contentsOf: URL.init(string: "http://images.library.amnh.org/digital/files/original/6615b3ec15600bbef25d5c3908a43b33.jpg")!))
+
         detailButton.layer.cornerRadius = 4.0
     }
     

@@ -14,6 +14,9 @@
 		D78D08D21DE0F3A2007F1699 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D78D08D11DE0F3A2007F1699 /* Assets.xcassets */; };
 		D78D08D51DE0F3A2007F1699 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D78D08D31DE0F3A2007F1699 /* LaunchScreen.storyboard */; };
 		D78D08DD1DE0F832007F1699 /* BeaconAdmin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78D08DC1DE0F832007F1699 /* BeaconAdmin.swift */; };
+		D7C812EA1DE20C2C00129433 /* flag.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = D7C812E91DE20C2C00129433 /* flag.jpeg */; };
+		D7C918841DE214850001AE00 /* example.json in Resources */ = {isa = PBXBuildFile; fileRef = D7C918831DE214850001AE00 /* example.json */; };
+		D7C918861DE2205F0001AE00 /* flag2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D7C918851DE2205F0001AE00 /* flag2.jpg */; };
 		D7DDA9D11DE1DD4500F81652 /* ArtifactTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DDA9D01DE1DD4500F81652 /* ArtifactTableView.swift */; };
 		D7DDA9D31DE1E9F300F81652 /* TableViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DDA9D21DE1E9F300F81652 /* TableViewCells.swift */; };
 /* End PBXBuildFile section */
@@ -28,6 +31,9 @@
 		D78D08D41DE0F3A2007F1699 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D78D08D61DE0F3A2007F1699 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D78D08DC1DE0F832007F1699 /* BeaconAdmin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconAdmin.swift; sourceTree = "<group>"; };
+		D7C812E91DE20C2C00129433 /* flag.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flag.jpeg; sourceTree = "<group>"; };
+		D7C918831DE214850001AE00 /* example.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = example.json; sourceTree = "<group>"; };
+		D7C918851DE2205F0001AE00 /* flag2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flag2.jpg; sourceTree = "<group>"; };
 		D7DDA9D01DE1DD4500F81652 /* ArtifactTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtifactTableView.swift; sourceTree = "<group>"; };
 		D7DDA9D21DE1E9F300F81652 /* TableViewCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewCells.swift; path = ../TableViewCells.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,6 +78,9 @@
 				D78D08D11DE0F3A2007F1699 /* Assets.xcassets */,
 				D78D08D31DE0F3A2007F1699 /* LaunchScreen.storyboard */,
 				D78D08D61DE0F3A2007F1699 /* Info.plist */,
+				D7C812E91DE20C2C00129433 /* flag.jpeg */,
+				D7C918831DE214850001AE00 /* example.json */,
+				D7C918851DE2205F0001AE00 /* flag2.jpg */,
 			);
 			path = "my-curator-ios";
 			sourceTree = "<group>";
@@ -141,9 +150,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7C918861DE2205F0001AE00 /* flag2.jpg in Resources */,
 				D78D08D51DE0F3A2007F1699 /* LaunchScreen.storyboard in Resources */,
+				D7C918841DE214850001AE00 /* example.json in Resources */,
 				D78D08D21DE0F3A2007F1699 /* Assets.xcassets in Resources */,
 				D78D08D01DE0F3A2007F1699 /* Main.storyboard in Resources */,
+				D7C812EA1DE20C2C00129433 /* flag.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
